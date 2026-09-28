@@ -17,7 +17,7 @@ struct SettingsView: View {
         Form {
             Section("Alert") {
                 Stepper("Interrupt \(leadMinutes) min before start", value: $leadMinutes, in: 0...15)
-                Toggle("Play sound until dismissed", isOn: $playSound)
+                Toggle("Play sound", isOn: $playSound)
             }
 
             Section("Workday") {

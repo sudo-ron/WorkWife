@@ -23,14 +23,14 @@
 	<key>CFBundleVersion</key>
 	<string>1</string>
 	<key>LSMinimumSystemVersion</key>
-	<string>14.0</string>
+	<string>14.2</string>
 	<key>LSUIElement</key>
 	<true/>
-	<key>NSPrincipalClass</key>
-	<string>NSApplication</string>
 	<key>NSCalendarsFullAccessUsageDescription</key>
 	<string>WorkWife reads your calendar locally to interrupt you before meetings start.</string>
 	<key>NSCalendarsUsageDescription</key>
 	<string>WorkWife reads your calendar locally to interrupt you before meetings start.</string>
+	<key>NSPrincipalClass</key>
+	<string>NSApplication</string>
 </dict>
 </plist>

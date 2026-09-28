@@ -28,6 +28,7 @@ final class Scheduler {
     private var tickTimer: Timer?
     private var syncTimer: Timer?
     private let lateWindow: TimeInterval = 5 * 60
+    private let joinWindow: TimeInterval = 15 * 60
     var onDue: (([Meeting]) -> Void)?
 
     func start() {
@@ -79,6 +80,13 @@ final class Scheduler {
         guard authorized else { return nil }
         let now = Date()
         return meetings(from: now, to: now.addingTimeInterval(24 * 3600)).first { $0.start > now }
+    }
+
+    func joinableMeetings() -> [Meeting] {
+        guard authorized else { return [] }
+        let now = Date()
+        return meetings(from: now.addingTimeInterval(-12 * 3600), to: now.addingTimeInterval(joinWindow))
+            .filter { $0.joinURL != nil && $0.end > now && $0.start <= now.addingTimeInterval(joinWindow) }
     }
 
     func calendarInfos() -> [CalendarInfo] {

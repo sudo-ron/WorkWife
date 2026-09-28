@@ -11,7 +11,7 @@ WorkWife reads events from the macOS Calendar database through EventKit. Nothing
 
 | | |
 |---|---|
-| macOS | 14 or later |
+| macOS | 14.2 or later |
 | Toolchain | Xcode with Swift 6 |
 | Signing | An Apple Development certificate in the login keychain (a free Apple ID personal team works) |
 
@@ -48,9 +48,24 @@ An event triggers an alert only if it is:
 - on an enabled calendar
 - starting inside your configured workday
 
-The takeover covers every display and Space, including full-screen apps. It shows the event title, calendar, a live countdown, time range, location, and a **Join** button when a Google Meet, Zoom, Teams, Webex, or Whereby link is found in the event URL, location, or notes. Buttons are click-only so that a stray <kbd>Return</kbd> or <kbd>Esc</kbd> while typing cannot dismiss it.
+The takeover covers every display and Space, including full-screen apps. It shows the event title, calendar, a live countdown, time range, location, and a **Join** button when a Google Meet, Zoom, Teams, Webex, or Whereby link is found in the event URL, location, or notes. **Join** opens that meeting's link and removes only that meeting from the takeover. The same links stay available as **Join …** items in the menu-bar menu from 15 minutes before a meeting until it ends.
 
-Sound plays `tindeck_1.mp3` once, then loops the system *Submarine* sound until **Join**, **Snooze 1 min**, or **Dismiss** is clicked.
+The takeover never takes keyboard focus, so shortcuts in the app you are using, such as a call's mute toggle, keep working while it is up. Buttons are click-only, which also means a stray <kbd>Return</kbd> or <kbd>Esc</kbd> cannot dismiss it.
+
+Sound plays `tindeck_1.mp3` once, then loops the system *Submarine* sound until **Join**, **Snooze 1 min**, or **Dismiss** is clicked. With more than one meeting on screen the dismiss button reads **Dismiss all**; **Snooze 1 min** brings every shown meeting back one minute later. If a call app (Zoom, Teams, FaceTime, Webex, Slack, or a browser) is capturing audio, only the single chime plays.
+
+## Screen sharing
+
+The takeover window is excluded from screen capture (`sharingType = .none`), so people watching a full-screen share do not see it.
+
+| Sharing app | Verified |
+|---|---|
+| Google Meet in Chrome | Hidden, tested through Chrome's own screen-capture path |
+| Zoom 7.0.6 | Hidden, tested with Zoom's own local recording |
+| Microsoft Teams | Not tested |
+
+> [!WARNING]
+> Apps that capture through the deprecated `CGDisplayStream` API ignore `sharingType` and will show the takeover.
 
 ## Settings
 
@@ -59,7 +74,7 @@ Open **Settings…** from the menu-bar bell.
 | Setting | Default |
 |---|---|
 | Interrupt lead time | 2 minutes (0–15) |
-| Play sound until dismissed | On |
+| Play sound | On |
 | Workdays | Monday–Friday |
 | Workday hours | 09:00–18:00 |
 | Calendars | All enabled |
@@ -69,9 +84,10 @@ Open **Settings…** from the menu-bar bell.
 
 | Path | Purpose |
 |---|---|
-| `Sources/WorkWife/App.swift` | Entry point, menu-bar item, settings window |
+| `Sources/WorkWife/App.swift` | Entry point, menu-bar menu (next meeting, **Join …** links, Test Alert), settings window |
 | `Sources/WorkWife/Scheduler.swift` | EventKit queries, filtering, alert timing, snooze, join-link detection |
-| `Sources/WorkWife/Overlay.swift` | Full-screen panels, SwiftUI alert view, sound sequencing |
+| `Sources/WorkWife/Overlay.swift` | Non-activating, capture-excluded full-screen panels, SwiftUI alert view, sound sequencing |
+| `Sources/WorkWife/Microphone.swift` | Detects a call app capturing audio via Core Audio process objects |
 | `Sources/WorkWife/SettingsView.swift` | Settings UI and launch-at-login |
 | `Sources/WorkWife/Prefs.swift` | `UserDefaults` keys, defaults, workday check |
 | `Support/Info.plist` | Bundle metadata, `LSUIElement`, calendar usage strings |

@@ -46,6 +46,17 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
             menu.addItem(disabled: "No meetings in the next 24 hours")
         }
 
+        let joinable = scheduler.joinableMeetings()
+        if !joinable.isEmpty {
+            menu.addItem(.separator())
+            for m in joinable {
+                let item = NSMenuItem(title: "Join \(m.title)", action: #selector(openJoinURL(_:)), keyEquivalent: "")
+                item.target = self
+                item.representedObject = m.joinURL
+                menu.addItem(item)
+            }
+        }
+
         menu.addItem(.separator())
         menu.addItem("Test Alert", action: #selector(testAlert), key: "t", target: self)
         menu.addItem("Settings…", action: #selector(openSettings), key: ",", target: self)
@@ -78,6 +89,10 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
         settingsWindow!.center()
         NSApp.activate(ignoringOtherApps: true)
         settingsWindow!.makeKeyAndOrderFront(nil)
+    }
+
+    @objc private func openJoinURL(_ sender: NSMenuItem) {
+        NSWorkspace.shared.open(sender.representedObject as! URL)
     }
 
     @objc private func openPrivacySettings() {

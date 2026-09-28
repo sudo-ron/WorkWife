@@ -1,9 +1,8 @@
 import AppKit
 import SwiftUI
 
-final class OverlayPanel: NSPanel {
-    override var canBecomeKey: Bool { true }
-    override var canBecomeMain: Bool { true }
+final class FirstClickHostingView<Content: View>: NSHostingView<Content> {
+    override func acceptsFirstMouse(for event: NSEvent?) -> Bool { true }
 }
 
 @MainActor
@@ -20,13 +19,28 @@ final class OverlayController {
             meetings.append(m)
         }
         meetings.sort { $0.start < $1.start }
+        render()
+
+        if Prefs.playSound && chime == nil && loop == nil {
+            let chime = NSSound(contentsOf: Bundle.main.url(forResource: "tindeck_1", withExtension: "mp3")!, byReference: true)!
+            chime.play()
+            self.chime = chime
+            guard !Microphone.inUseByCallApp() else { return }
+            loopTimer = Timer.scheduledTimer(withTimeInterval: chime.duration, repeats: false) { [weak self] _ in
+                MainActor.assumeIsolated { self?.startLoop() }
+            }
+        }
+    }
+
+    private func render() {
         closePanels()
 
         for screen in NSScreen.screens {
-            let panel = OverlayPanel(contentRect: screen.frame, styleMask: [.borderless], backing: .buffered, defer: false)
+            let panel = NSPanel(contentRect: screen.frame, styleMask: [.borderless, .nonactivatingPanel], backing: .buffered, defer: false)
             panel.setFrame(screen.frame, display: false)
             panel.level = .screenSaver
             panel.collectionBehavior = [.canJoinAllSpaces, .fullScreenAuxiliary, .stationary, .ignoresCycle]
+            panel.sharingType = .none
             panel.isOpaque = false
             panel.backgroundColor = .clear
             panel.hidesOnDeactivate = false
@@ -39,12 +53,9 @@ final class OverlayController {
             blur.state = .active
             blur.autoresizingMask = [.width, .height]
 
-            let host = NSHostingView(rootView: OverlayView(
+            let host = FirstClickHostingView(rootView: OverlayView(
                 meetings: meetings,
-                join: { [weak self] m in
-                    NSWorkspace.shared.open(m.joinURL!)
-                    self?.dismiss()
-                },
+                join: { [weak self] m in self?.join(m) },
                 snooze: { [weak self] in
                     guard let self else { return }
                     self.onSnooze?(self.meetings)
@@ -59,18 +70,13 @@ final class OverlayController {
             panels.append(panel)
         }
 
-        NSApp.activate(ignoringOtherApps: true)
         for panel in panels { panel.orderFrontRegardless() }
-        panels.first?.makeKey()
+    }
 
-        if Prefs.playSound && chime == nil && loop == nil {
-            let chime = NSSound(contentsOf: Bundle.main.url(forResource: "tindeck_1", withExtension: "mp3")!, byReference: true)!
-            chime.play()
-            self.chime = chime
-            loopTimer = Timer.scheduledTimer(withTimeInterval: chime.duration, repeats: false) { [weak self] _ in
-                MainActor.assumeIsolated { self?.startLoop() }
-            }
-        }
+    private func join(_ meeting: Meeting) {
+        NSWorkspace.shared.open(meeting.joinURL!)
+        meetings.removeAll { $0.id == meeting.id }
+        if meetings.isEmpty { dismiss() } else { render() }
     }
 
     private func startLoop() {
@@ -140,7 +146,7 @@ struct OverlayView: View {
 
                 HStack(spacing: 20) {
                     Button("Snooze 1 min", action: snooze).controlSize(.extraLarge)
-                    Button("Dismiss", action: dismiss).controlSize(.extraLarge)
+                    Button(meetings.count > 1 ? "Dismiss all" : "Dismiss", action: dismiss).controlSize(.extraLarge)
                 }
             }
             .padding(60)
