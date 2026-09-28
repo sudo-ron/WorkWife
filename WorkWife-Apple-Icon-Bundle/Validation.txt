@@ -1,0 +1,17 @@
+WorkWife approved icon bundle — validation
+Date: 2026-09-28
+
+PASS: Approved master copied byte-for-byte; SHA-256 matches workwife-icon-bell.png.
+PASS: Master is 1024 x 1024 RGB, embedded sRGB, no alpha channel.
+PASS: 28 Xcode slots reference existing images of the correct pixel dimensions.
+PASS: All iPhone/iPad/App Store PNGs are RGB with embedded sRGB and no alpha.
+PASS: All Mac PNGs are RGBA with embedded sRGB and transparent outer corners.
+PASS: Xcode 27.0 actool compilation for macOS, deployment target 11.0, exit 0.
+PASS: Xcode 27.0 actool compilation for iPhone/iPad, deployment target 15.0, exit 0.
+PASS: Standalone WorkWife.icns contains all ten standard and Retina PNG representations.
+PASS: ICNS header and length valid; all raster representations decode successfully.
+PASS: Large comparison and small-size preview visually reviewed.
+
+Compiler environment note: the local sandbox could not connect to CoreSimulator services or write their log files. Both asset compilations still completed successfully and emitted their compiled assets and metadata. This is an asset compilation check, not a complete application build or App Store submission validation.
+
+Bundle format: standard raster AppIcon.appiconset plus ICNS/iconset; no layered Icon Composer file. The original approved design remains locked.

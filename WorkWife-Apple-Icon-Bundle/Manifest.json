@@ -1,0 +1,322 @@
+{
+  "name": "WorkWife Apple Icon Bundle",
+  "version": "1.0",
+  "status": "approved",
+  "approved_design": "Charcoal calendar, white ringing bell, orange focus corners",
+  "platforms": [
+    "macOS",
+    "iOS",
+    "iPadOS"
+  ],
+  "master": "Master/WorkWife-AppIcon-1024.png",
+  "xcode_app_icon_name": "AppIcon",
+  "xcode_icon_slots": 28,
+  "validation": "Validation.txt",
+  "files": [
+    {
+      "path": "Assets.xcassets/AppIcon.appiconset/Contents.json",
+      "bytes": 3249,
+      "sha256": "14cdae7c4ac61ff3d4c577d22a29ad03c4520531cbe1445682ee6bd3a6cd44f1"
+    },
+    {
+      "path": "Assets.xcassets/AppIcon.appiconset/ios-1024.png",
+      "bytes": 755902,
+      "sha256": "a2c14b8901e9dc52ace125984ec334bb9ce60c1ec9a0c153059caf5d9888d68f",
+      "width": 1024,
+      "height": 1024,
+      "mode": "RGB"
+    },
+    {
+      "path": "Assets.xcassets/AppIcon.appiconset/ios-120.png",
+      "bytes": 13997,
+      "sha256": "b1523816c557730513bcbe8d750732e224ac650ffdae84fd2a7d3e247bfeb5d2",
+      "width": 120,
+      "height": 120,
+      "mode": "RGB"
+    },
+    {
+      "path": "Assets.xcassets/AppIcon.appiconset/ios-152.png",
+      "bytes": 20594,
+      "sha256": "6b29d0c1b52b2a51c7bd7b3158cf63aba5ed69b79688766f5f869bdfc3498695",
+      "width": 152,
+      "height": 152,
+      "mode": "RGB"
+    },
+    {
+      "path": "Assets.xcassets/AppIcon.appiconset/ios-167.png",
+      "bytes": 24269,
+      "sha256": "4d3b5fb89cff13dfdfa70faf56e70301eaddd8ff0b72d15b7551ec0c701b6915",
+      "width": 167,
+      "height": 167,
+      "mode": "RGB"
+    },
+    {
+      "path": "Assets.xcassets/AppIcon.appiconset/ios-180.png",
+      "bytes": 27642,
+      "sha256": "eaf915afb7be65944b9d2eb9fa40eb383a371b636885506b03e6db34c4dbd422",
+      "width": 180,
+      "height": 180,
+      "mode": "RGB"
+    },
+    {
+      "path": "Assets.xcassets/AppIcon.appiconset/ios-20.png",
+      "bytes": 1251,
+      "sha256": "f021f9eee047aaf247a527e12feeb6ce7ef988e26ba85baad3c14ca44dd37f28",
+      "width": 20,
+      "height": 20,
+      "mode": "RGB"
+    },
+    {
+      "path": "Assets.xcassets/AppIcon.appiconset/ios-29.png",
+      "bytes": 1851,
+      "sha256": "0d5fe76d3910fcb6ea49bcc17886cb0689796a9833eb4212745d88c9e233758d",
+      "width": 29,
+      "height": 29,
+      "mode": "RGB"
+    },
+    {
+      "path": "Assets.xcassets/AppIcon.appiconset/ios-40.png",
+      "bytes": 2729,
+      "sha256": "90e74d9b5230434c2f822307d7d958b2b490aa4b49f9d34f53f89211992c8d42",
+      "width": 40,
+      "height": 40,
+      "mode": "RGB"
+    },
+    {
+      "path": "Assets.xcassets/AppIcon.appiconset/ios-58.png",
+      "bytes": 4634,
+      "sha256": "882ec9c8b335e65841b67bfe8916c1b92c4023d0be43914da16ba2be619b9e36",
+      "width": 58,
+      "height": 58,
+      "mode": "RGB"
+    },
+    {
+      "path": "Assets.xcassets/AppIcon.appiconset/ios-60.png",
+      "bytes": 4823,
+      "sha256": "9c561dfea23a4f1d24f516b77277051771df9f463313618880da2f490d7868cc",
+      "width": 60,
+      "height": 60,
+      "mode": "RGB"
+    },
+    {
+      "path": "Assets.xcassets/AppIcon.appiconset/ios-76.png",
+      "bytes": 6807,
+      "sha256": "19d561bda4e316289efed6dfce4c88e56f133ea24934abd3af9cda2710ba6186",
+      "width": 76,
+      "height": 76,
+      "mode": "RGB"
+    },
+    {
+      "path": "Assets.xcassets/AppIcon.appiconset/ios-80.png",
+      "bytes": 7397,
+      "sha256": "717b8e50df3b49ecfc941a504821c1033828d6ce12e1cb9ac18a73e51bd5c48d",
+      "width": 80,
+      "height": 80,
+      "mode": "RGB"
+    },
+    {
+      "path": "Assets.xcassets/AppIcon.appiconset/ios-87.png",
+      "bytes": 8357,
+      "sha256": "b10f52cc0b8656c4fe9d3d2a7e427354145176b51b67ee9db20e08c58f338065",
+      "width": 87,
+      "height": 87,
+      "mode": "RGB"
+    },
+    {
+      "path": "Assets.xcassets/AppIcon.appiconset/mac-128.png",
+      "bytes": 13514,
+      "sha256": "0ef002f7d47123e02195e848a9e860cddd8ae2f6b16853b20bbcea6d870959e6",
+      "width": 128,
+      "height": 128,
+      "mode": "RGBA"
+    },
+    {
+      "path": "Assets.xcassets/AppIcon.appiconset/mac-128@2x.png",
+      "bytes": 42890,
+      "sha256": "b2439bbeafb47da517ccfe256b20f42c008059f877c42e782212c129e6ab3130",
+      "width": 256,
+      "height": 256,
+      "mode": "RGBA"
+    },
+    {
+      "path": "Assets.xcassets/AppIcon.appiconset/mac-16.png",
+      "bytes": 1071,
+      "sha256": "00f645b3f702ee85e7a59a46376412f8de13927feb4ca88074ff1f241ef0fcad",
+      "width": 16,
+      "height": 16,
+      "mode": "RGBA"
+    },
+    {
+      "path": "Assets.xcassets/AppIcon.appiconset/mac-16@2x.png",
+      "bytes": 2041,
+      "sha256": "251c0588c52015fab753df11ac4bf11ae1735dd882e9f12ec42364af5404ca7f",
+      "width": 32,
+      "height": 32,
+      "mode": "RGBA"
+    },
+    {
+      "path": "Assets.xcassets/AppIcon.appiconset/mac-256.png",
+      "bytes": 42890,
+      "sha256": "b2439bbeafb47da517ccfe256b20f42c008059f877c42e782212c129e6ab3130",
+      "width": 256,
+      "height": 256,
+      "mode": "RGBA"
+    },
+    {
+      "path": "Assets.xcassets/AppIcon.appiconset/mac-256@2x.png",
+      "bytes": 165887,
+      "sha256": "c044419aa5562a8fcbf33dbaef4e35324957d76d825cc3c0e59435caa927d58f",
+      "width": 512,
+      "height": 512,
+      "mode": "RGBA"
+    },
+    {
+      "path": "Assets.xcassets/AppIcon.appiconset/mac-32.png",
+      "bytes": 2041,
+      "sha256": "251c0588c52015fab753df11ac4bf11ae1735dd882e9f12ec42364af5404ca7f",
+      "width": 32,
+      "height": 32,
+      "mode": "RGBA"
+    },
+    {
+      "path": "Assets.xcassets/AppIcon.appiconset/mac-32@2x.png",
+      "bytes": 4906,
+      "sha256": "47af24962806e2db4d3b15a4b8af821ac33c89d0146e8dcb6ad051f89da40406",
+      "width": 64,
+      "height": 64,
+      "mode": "RGBA"
+    },
+    {
+      "path": "Assets.xcassets/AppIcon.appiconset/mac-512.png",
+      "bytes": 165887,
+      "sha256": "c044419aa5562a8fcbf33dbaef4e35324957d76d825cc3c0e59435caa927d58f",
+      "width": 512,
+      "height": 512,
+      "mode": "RGBA"
+    },
+    {
+      "path": "Assets.xcassets/AppIcon.appiconset/mac-512@2x.png",
+      "bytes": 645983,
+      "sha256": "c2cdf06e692bea0f12189160be52d7d78ec2a02e2e57c48f2a37cf2843a3a09d",
+      "width": 1024,
+      "height": 1024,
+      "mode": "RGBA"
+    },
+    {
+      "path": "Assets.xcassets/Contents.json",
+      "bytes": 60,
+      "sha256": "f5fb0e1f3a8142892ed092efb5955c1c2cc537003a89ad7bbdb9dade7fe8985f"
+    },
+    {
+      "path": "Master/WorkWife-AppIcon-1024.png",
+      "bytes": 973516,
+      "sha256": "aafddd9504f7c1896bd9bd61b5a79a55d8c7f90c1fad4480f5a3e049e0ad3769",
+      "width": 1024,
+      "height": 1024,
+      "mode": "RGB"
+    },
+    {
+      "path": "Preview.png",
+      "bytes": 316206,
+      "sha256": "0235c153cb3755519302aae88fbb83e5ccd0a2d2ef7ebd09e860009e7a99aa1f",
+      "width": 1200,
+      "height": 830,
+      "mode": "RGB"
+    },
+    {
+      "path": "README.md",
+      "bytes": 2849,
+      "sha256": "884d528f74bf2523d9a1d30234e522a29a482a866079b9b3bf133a06d8c3c77a"
+    },
+    {
+      "path": "Validation.txt",
+      "bytes": 1319,
+      "sha256": "64cd1739fc408c10403994f5b41814a7af2be07d67f4d3813d95b0f2c7899605"
+    },
+    {
+      "path": "macOS/WorkWife.icns",
+      "bytes": 1087198,
+      "sha256": "4cf6074ad4f4f32cd88e4132734df503259a311395c3ddd187b4001b229d093e"
+    },
+    {
+      "path": "macOS/WorkWife.iconset/icon_128x128.png",
+      "bytes": 13514,
+      "sha256": "0ef002f7d47123e02195e848a9e860cddd8ae2f6b16853b20bbcea6d870959e6",
+      "width": 128,
+      "height": 128,
+      "mode": "RGBA"
+    },
+    {
+      "path": "macOS/WorkWife.iconset/icon_128x128@2x.png",
+      "bytes": 42890,
+      "sha256": "b2439bbeafb47da517ccfe256b20f42c008059f877c42e782212c129e6ab3130",
+      "width": 256,
+      "height": 256,
+      "mode": "RGBA"
+    },
+    {
+      "path": "macOS/WorkWife.iconset/icon_16x16.png",
+      "bytes": 1071,
+      "sha256": "00f645b3f702ee85e7a59a46376412f8de13927feb4ca88074ff1f241ef0fcad",
+      "width": 16,
+      "height": 16,
+      "mode": "RGBA"
+    },
+    {
+      "path": "macOS/WorkWife.iconset/icon_16x16@2x.png",
+      "bytes": 2041,
+      "sha256": "251c0588c52015fab753df11ac4bf11ae1735dd882e9f12ec42364af5404ca7f",
+      "width": 32,
+      "height": 32,
+      "mode": "RGBA"
+    },
+    {
+      "path": "macOS/WorkWife.iconset/icon_256x256.png",
+      "bytes": 42890,
+      "sha256": "b2439bbeafb47da517ccfe256b20f42c008059f877c42e782212c129e6ab3130",
+      "width": 256,
+      "height": 256,
+      "mode": "RGBA"
+    },
+    {
+      "path": "macOS/WorkWife.iconset/icon_256x256@2x.png",
+      "bytes": 165887,
+      "sha256": "c044419aa5562a8fcbf33dbaef4e35324957d76d825cc3c0e59435caa927d58f",
+      "width": 512,
+      "height": 512,
+      "mode": "RGBA"
+    },
+    {
+      "path": "macOS/WorkWife.iconset/icon_32x32.png",
+      "bytes": 2041,
+      "sha256": "251c0588c52015fab753df11ac4bf11ae1735dd882e9f12ec42364af5404ca7f",
+      "width": 32,
+      "height": 32,
+      "mode": "RGBA"
+    },
+    {
+      "path": "macOS/WorkWife.iconset/icon_32x32@2x.png",
+      "bytes": 4906,
+      "sha256": "47af24962806e2db4d3b15a4b8af821ac33c89d0146e8dcb6ad051f89da40406",
+      "width": 64,
+      "height": 64,
+      "mode": "RGBA"
+    },
+    {
+      "path": "macOS/WorkWife.iconset/icon_512x512.png",
+      "bytes": 165887,
+      "sha256": "c044419aa5562a8fcbf33dbaef4e35324957d76d825cc3c0e59435caa927d58f",
+      "width": 512,
+      "height": 512,
+      "mode": "RGBA"
+    },
+    {
+      "path": "macOS/WorkWife.iconset/icon_512x512@2x.png",
+      "bytes": 645983,
+      "sha256": "c2cdf06e692bea0f12189160be52d7d78ec2a02e2e57c48f2a37cf2843a3a09d",
+      "width": 1024,
+      "height": 1024,
+      "mode": "RGBA"
+    }
+  ]
+}
